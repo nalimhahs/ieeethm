@@ -3,9 +3,9 @@ import razorpay
 client = razorpay.Client(auth=("rzp_test_pKWOPyipkLGMXB", "Xvpgatw44IzoXBp16YrETL7a"))
 client.set_app_details({"title" : "Django", "version" : "2.2.4"})
 
-def get_order():
+def get_order(Event):
   data = {
-    "amount" : 100,
+    "amount" : Event.amount,
     "currency" : "INR",
     "receipt" : "ieeethm#1",
     "payment_capture" : 1,
@@ -13,5 +13,4 @@ def get_order():
   }
   order = client.order.create(data=data)
   print(order)
-
-get_order()
+  return order
