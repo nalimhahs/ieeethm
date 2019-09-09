@@ -1,43 +1,17 @@
 from django.shortcuts import render
-from rest_framework import generics
-from rest_framework.response import Response
 
 from .models import Event, Catagory
-from .serializers import EventSerializer, CatagorySerializer
 
 # Create your views here.
 
-class ListAllEventsView(generics.ListAPIView):
+def allCatagories(request):
+  catagories = Catagory.objects.all()
+  return render(request, 'events/events.html', { 'catagories': catagories })
 
-    queryset = Event.objects.all()
-    serializer_class = EventSerializer
+def catagoryListing(request, catagory):
+  events = Event.objects.filter(catagory__name=catagory)
+  return render(request, 'events/eventlist.html', { 'events': events })
 
-
-class ListAllCatagoriesView(generics.ListAPIView):
-
-    queryset = Catagory.objects.all()
-    serializer_class = CatagorySerializer
-
-
-class ListEventByCatagoryView(generics.ListAPIView):
-
-    serializer_class = EventSerializer
-
-    def get_queryset(self):
-        try:
-            catagory = self.request.query_params.get('catagory')
-        except:
-            return Response({ "error": "Invalid Parameters" })
-        return Event.objects.filter(catagory__name=catagory)
-
-
-class GetEventView(generics.ListAPIView):
-
-    serializer_class = EventSerializer
-
-    def get_queryset(self):
-        try:
-            event_id = self.request.query_params.get('event')
-        except:
-            return Response({ "error": "Invalid Parameters" })
-        return Event.objects.filter(event_id=event_id)
+def eventListing(request, catagory, event_id):
+  event = Event.objects.filter(event_id=event_id)
+  return render(request, 'events/singleevent.html', { 'event': event })
