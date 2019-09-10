@@ -14,4 +14,4 @@ def catagoryListing(request, catagory):
 
 def eventListing(request, catagory, event_id):
   event = Event.objects.filter(event_id=event_id)
-  return render(request, 'events/singleevent.html', { 'event': event })
+  return render(request, 'events/singleevent.html', { 'event': event, 'eventName': event[0].name })
