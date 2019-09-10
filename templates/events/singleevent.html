@@ -1,103 +1,163 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>
+      Single Event | IEEE Travancore Hub Meet 2019 - TKM College of Engineering
+    </title>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-129415078-2"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
 
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Single Event | IEEE Travancore Hub Meet 2019 - TKM College of Engineering </title>
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-129415078-2"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag('js', new Date());
-
-    gtag('config', 'UA-129415078-2');
-  </script>
-  <meta name="description" content="Official website of IEEE Travancore Hub Meet 2019, TKM College of Engineering.">
-  <meta name="keywords" content="IEEE Travancore Hub Meet 2019,THM19,IEEE,IEEE SB TKMCE,IEEEorg,IEEER10,TKMCE,TKM College of engineering,IEEE Kerala,THM19">
-  <link rel="icon" href="{% static 'src/images/thm-logo-white.png' %}" type="image/icon">
-  <link href="https://fonts.googleapis.com/css?family=Oxygen:400,700|Arimo:400,700" rel="stylesheet">
-  <link rel="stylesheet" href="{% static 'dist/css/style.css' %}">
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="{% static 'dist/css/style-single.css' %}">
-  <style>
-    .head-font,
-    h1,
-    h2,
-    h4,
-    h3,
-    span {
-      font-family: 'Montserrat', sans-serif;
-    }
-
-    @media (min-width: 640px) {
-      .padding {
-        padding-top: 0px;
-        padding-bottom: 0px;
+      function gtag() {
+        dataLayer.push(arguments);
       }
-    }
+      gtag("js", new Date());
 
-    p {
-      font-size: 2.5vh;
-      font-family: 'Montserrat', sans-serif;
-    }
-  </style>
-</head>
+      gtag("config", "UA-129415078-2");
+    </script>
+    <meta
+      name="description"
+      content="Official website of IEEE Travancore Hub Meet 2019, TKM College of Engineering."
+    />
+    <meta
+      name="keywords"
+      content="IEEE Travancore Hub Meet 2019,THM19,IEEE,IEEE SB TKMCE,IEEEorg,IEEER10,TKMCE,TKM College of engineering,IEEE Kerala,THM19"
+    />
+    <link
+      rel="icon"
+      href="{% static 'src/images/thm-logo-white.png' %}"
+      type="image/icon"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Oxygen:400,700|Arimo:400,700"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{% static 'dist/css/style.css' %}" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{% static 'dist/css/style-single.css' %}" />
+    <style>
+      .head-font,
+      h1,
+      h2,
+      h4,
+      h3,
+      span {
+        font-family: "Montserrat", sans-serif;
+      }
 
-<body class="t">
-  <div class="ny">
-    <header class="na">
-      <div class="tcontainern">
-        <div class="nh">
-          <div class="nc">
-            <h1 class="sf"><a href="./"> <img src="{% static 'src/images/thm-logo.svg' %}" width="200px" alt="THM Logo"></a></h1>
-          </div><button id="tu" class="tu" aria-controls="primary-menu" aria-expanded="false"><span class="if">Menu</span> <span class="ta"><span class="tf"></span></span></button>
-          <nav id="np" class="np">
-            <div class="nd">
-              <ul class="il h nm">
-                <li><a href="#">Home</a></li>
-              </ul>
-              <ul class="il nm">
-                <li><a class="tbuttonn fbuttonl sbuttono" href="#">Events</a></li>
-              </ul>
-            </div>
-          </nav>
-        </div>
-      </div>
-    </header>
-    <main class="nf">
-      {% for event in event %}
-      <section class="ra nl tillustration-section-n">
+      @media (min-width: 640px) {
+        .padding {
+          padding-top: 0px;
+          padding-bottom: 0px;
+        }
+      }
+
+      p {
+        font-size: 2.5vh;
+        font-family: "Montserrat", sans-serif;
+      }
+    </style>
+  </head>
+
+  <body class="t">
+    <div class="ny">
+      <header class="na">
         <div class="tcontainern">
-          <div class="rs rr">
-            <div class="tj">
-              <div class="tq">
-                <div class="ro nt at">
-                  <h1 class="sl os reveal-from-left">{{event.name}}</h1>
-                  <p align="justify" class="sf ol reveal-from-left" data-reveal-delay="200">{{event.desc|safe}}</p>
-                  <h6>Date : {{event.event_start}}</h6>
-                  <h6>Time : </h6>
-                  <h6>Coordinators</h6>
-                  <p>{{event.organizer_1}} : {{event.organizer_1.phone}}</p>
-                  <p>{{event.organizer_2}} : {{event.organizer_2.phone}}</p>
-                  <div class="reveal-from-left" data-reveal-delay="400"><a class="tbuttonn fbuttonl gbuttony" href="#">Register Now</a></div>
+          <div class="nh">
+            <div class="nc">
+              <h1 class="sf">
+                <a href="/">
+                  <img
+                    src="{% static 'src/images/thm-logo.svg' %}"
+                    width="200px"
+                    alt="THM Logo"
+                /></a>
+              </h1>
+            </div>
+            <button
+              id="tu"
+              class="tu"
+              aria-controls="primary-menu"
+              aria-expanded="false"
+            >
+              <span class="if">Menu</span>
+              <span class="ta"><span class="tf"></span></span>
+            </button>
+            <nav id="np" class="np">
+              <div class="nd">
+                <ul class="il h nm">
+                  <li><a href="/">Home</a></li>
+                </ul>
+                <ul class="il nm">
+                  <li>
+                    <a class="tbuttonn fbuttonl sbuttono" href="/events"
+                      >Events</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </header>
+      <main class="nf">
+        {% for event in event %}
+        <section class="ra nl tillustration-section-n">
+          <div class="tcontainern">
+            <div class="rs rr">
+              <div class="tj">
+                <div class="tq">
+                  <div class="ro nt at">
+                    <h1 class="sl os reveal-from-left" style="margin-bottom: 30px;">{{ event.name }}</h1>
+                    <div class="container" style="padding: 2.5%;">
+                      <p
+                        align="justify"
+                        class="sf ol reveal-from-left"
+                        data-reveal-delay="200"
+                      >
+                        {{ event.desc | safe }}
+                      </p>
+                    </div>
+                    <h6>Date : {{ event.event_start }}</h6>
+                    <h6 style="margin-bottom: 10px;">Coordinators</h6>
+                    <p style="line-height: 2rem; margin-bottom: 2rem;">
+                      {{ event.organizer_1 }} : {{ event.organizer_1.phone }}
+                      <br />
+                      {{ event.organizer_2 }} : {{ event.organizer_2.phone }}
+                    </p>
+                    <div class="reveal-from-left" data-reveal-delay="400">
+                      <a class="tbuttonn fbuttonl gbuttony" href="#"
+                        >Register Now</a
+                      >
+                    </div>
+                  </div>
+                  <div
+                    class="ru rz tz ne tillustration-element-n reveal-scale-up"
+                  >
+                    <img
+                      src="{% static '/dist/uploads/hero-image.svg' %}"
+                      alt="Event image"
+                    />
+                  </div>
                 </div>
-                <div class="ru rz tz ne tillustration-element-n reveal-scale-up"><img src="{% static '/dist/uploads/hero-image.svg' %}" alt="Event image"></div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
-      {% endfor %}
-    </main>
-  </div>
-  <script src="{% static 'dist/js/single-main.min.js' %}"></script>
-</body>
-
+        </section>
+        {% endfor %}
+      </main>
+    </div>
+    <script src="{% static 'dist/js/single-main.min.js' %}"></script>
+  </body>
 </html>
