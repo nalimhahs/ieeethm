@@ -23,7 +23,9 @@
 <meta name="keywords" content="IEEE Travancore Hub Meet 2019,THM19,IEEE,IEEE SB TKMCE,IEEEorg,IEEER10,TKMCE,TKM College of engineering,IEEE Kerala,THM19">
 <link rel="icon" href="{% static 'src/images/thm-logo-white.png' %}" type="image/icon">
 <link href="https://fonts.googleapis.com/css?family=Oxygen:400,700|Arimo:400,700" rel="stylesheet">
+<link rel='stylesheet' href='https://necolas.github.io/normalize.css/7.0.0/normalize.css'>
 <link rel="stylesheet" href="{% static 'dist/css/landing-style.css' %}">
+<link rel="stylesheet" href="{% static 'dist/css/liquid-button.css' %}">
 <link href="https://fonts.googleapis.com/css?family=Montserrat:600&display=swap" rel="stylesheet">
 <style>
   .head-font,
@@ -79,7 +81,11 @@
                   <h1 class="sa or reveal-from-top" data-reveal-delay="150">IEEE Travancore Hub Meet 2019</h1>
                   <p class="sa op reveal-from-top" data-reveal-delay="300">TKM College of Engineering - Kollam</p>
                   <p class="sa op reveal-from-top" data-reveal-delay="300">11-13 October 2019</p>
-                  <div class="reveal-from-top" data-reveal-delay="450"><a class="tbuttonn fbuttonl gbuttony" href="/events">See Events</a></div>
+                  <div class="reveal-from-top is-revealed" data-reveal-delay="450">
+                    <a style="background-color:#96D5F0" class="tbuttonn fbuttonl gbuttony" href="/workshops">WORKSHOPS</a>
+                    <a style="background-color: #c383d3;" class="tbuttonn fbuttonl gbuttony" href="/talks">TALKS</a>
+                    <a style="background-color:#9083d3;" class="tbuttonn fbuttonl gbuttony" href="/competitions">COMPETITIONS</a>
+                  </div>
                 </div>
                 <style>
                   @media (min-width: 641px) {
@@ -96,7 +102,7 @@
       </section>
   </div>
   <script src="{% static 'dist/js/landing-main.min.js' %}"></script>
-
+  <script src="{% static 'dist/js/liquid-button.js' %}"></script>
 </body>
 
 </html>
