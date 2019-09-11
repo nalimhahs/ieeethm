@@ -131,8 +131,8 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 CORS_ORIGIN_WHITELIST = [
-    "http://thm19.ieeesbtkmce.com",
-    "https://thm19.ieeesbtkmce.com",
+    "http://thm19.ieeesbtkmce.in",
+    "https://thm19.ieeesbtkmce.in",
     "http://localhost:8080",
     "http://127.0.0.1:5000"
 ]
