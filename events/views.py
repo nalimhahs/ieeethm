@@ -6,7 +6,7 @@ from .models import Event, Catagory
 
 def allCatagories(request):
   catagories = Catagory.objects.all()
-  return render(request, 'events/events.html', { 'catagories': catagories })
+  return render(request, 'events/index.html', { 'catagories': catagories })
 
 def catagoryListing(request, catagory):
   events = Event.objects.filter(catagory__name=catagory)
