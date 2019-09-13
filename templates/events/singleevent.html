@@ -136,16 +136,16 @@
                       <h6 style="margin-bottom: 10px;">Coordinators</h6>
                       <p style="line-height: 2rem; margin-bottom: 2rem;">
                         {% if event.organizer_1 %}
-                          {{ event.organizer_1 }} : {{ event.organizer_1.phone }}
+                          {{ event.organizer_1 }} : <a href="tel:{{ event.organizer_1.phone }}">{{ event.organizer_1.phone }}</a>
                         {% endif %}
                         <br />
                         {% if event.organizer_2 %}
-                          {{ event.organizer_2 }} : {{ event.organizer_2.phone }}
+                          {{ event.organizer_2 }} : <a href="tel:{{ event.organizer_2.phone }}">{{ event.organizer_2.phone }}</a>
                         {% endif %}
                       </p>
                     {% endif %}
                     <div class="reveal-from-left" data-reveal-delay="400">
-                      <a class="tbuttonn fbuttonl gbuttony" href="{{ event.reg_link|default:"/" }}"
+                      <a class="tbuttonn fbuttonl gbuttony" target="_blank" href="{{ event.reg_link|default:"/" }}"
                         >Register Now</a
                       >
                     </div>
