@@ -129,27 +129,37 @@
                         {{ event.desc | safe }}
                       </p>
                     </div>
-                    <h6>Date : {{ event.event_start }}</h6>
-                    <h6 style="margin-bottom: 10px;">Coordinators</h6>
-                    <p style="line-height: 2rem; margin-bottom: 2rem;">
-                      {{ event.organizer_1 }} : {{ event.organizer_1.phone }}
-                      <br />
-                      {{ event.organizer_2 }} : {{ event.organizer_2.phone }}
-                    </p>
+                    {% if event.event_start %}
+                      <h6>Date : {{ event.event_start }}</h6>
+                    {% endif %}
+                    {% if event.organizer_1 or event.organizer_2 %}
+                      <h6 style="margin-bottom: 10px;">Coordinators</h6>
+                      <p style="line-height: 2rem; margin-bottom: 2rem;">
+                        {% if event.organizer_1 %}
+                          {{ event.organizer_1 }} : {{ event.organizer_1.phone }}
+                        {% endif %}
+                        <br />
+                        {% if event.organizer_2 %}
+                          {{ event.organizer_2 }} : {{ event.organizer_2.phone }}
+                        {% endif %}
+                      </p>
+                    {% endif %}
                     <div class="reveal-from-left" data-reveal-delay="400">
-                      <a class="tbuttonn fbuttonl gbuttony" href="#"
+                      <a class="tbuttonn fbuttonl gbuttony" href="{{ event.reg_link|default:"/" }}"
                         >Register Now</a
                       >
                     </div>
                   </div>
-                  <div
-                    class="ru rz tz ne tillustration-element-n reveal-scale-up"
-                  >
-                    <img
-                      src="{{event.banner_url}}"
-                      alt="Event image"
-                    />
-                  </div>
+                  {% if event.banner_url is not None %}
+                    <div
+                      class="ru rz tz ne tillustration-element-n reveal-scale-up"
+                    >
+                      <img
+                        src="{{event.banner_url}}"
+                        alt="Event image"
+                      />
+                    </div>
+                  {% endif %}
                 </div>
               </div>
             </div>
