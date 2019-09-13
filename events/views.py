@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.http import Http404
 
 from .models import Event, Catagory
 
@@ -10,6 +11,10 @@ def allCatagories(request):
 
 def catagoryListing(request, catagory):
   events = Event.objects.filter(catagory__name=catagory)
+  try:
+    p = Catagory.objects.get(name=catagory)
+  except Catagory.DoesNotExist:
+    raise Http404
   return render(request, 'events/eventlist.html', { 'events': events, 'catagory': catagory })
 
 def eventListing(request, catagory, event_id):
