@@ -81,7 +81,7 @@
                       </div>
                       <ul class="pricing-table-features list-reset text-xs">
                         <li>
-                          <span>{{event.desc|slice:":50"}}...</span>
+                          <span>{{event.desc|safe|slice:":50"}}...</span>
                         </li>
                       </ul>
                     </div>
