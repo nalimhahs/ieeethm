@@ -130,7 +130,7 @@
                       </p>
                     </div>
                     {% if event.event_start %}
-                      <h6>Date : {{ event.event_start }}</h6>
+                      <h6>Date : {{ event.event_start|date:"l d M Y" }}</h6>
                     {% endif %}
                     {% if event.organizer_1 or event.organizer_2 %}
                       <h6 style="margin-bottom: 10px;">Coordinators</h6>
