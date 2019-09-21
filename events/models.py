@@ -22,7 +22,7 @@ class Organizer(models.Model):
 class Event(models.Model):
   event_id = models.DecimalField(max_digits=3, primary_key=True, decimal_places=0)
   name = models.CharField(max_length=64)
-  desc = models.TextField(max_length=1024)
+  desc = models.TextField(max_length=2000)
   price = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True)
   organizer_1 = models.ForeignKey(Organizer, on_delete=models.PROTECT, related_name='event_organizer_1', null=True, blank=True)
   organizer_2 = models.ForeignKey(Organizer, on_delete=models.PROTECT, related_name='event_organizer_2', null=True, blank=True)
